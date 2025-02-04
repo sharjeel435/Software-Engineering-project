@@ -12,46 +12,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Transactions History</title>
+    <title>Transactions</title>
     <link rel="shortcut icon" type="image/png" href="image/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/deposit.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <style>
-
-        body {
-            background: linear-gradient(120deg, #fdfbfb, #fbfbfb);
-            font-family: 'Arial', sans-serif;
-        }
-
-        h2, h3 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .balance {
-            font-size: 20px;
-            font-weight: bold;
-            color: #4CAF50;
-        }
-
-        .table thead th {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-        }
-
-        .table tbody td {
-            text-align: center;
-        }
-
-        .alert {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 <div class="row">

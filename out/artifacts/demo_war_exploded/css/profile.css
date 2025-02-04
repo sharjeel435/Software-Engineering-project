@@ -1,175 +1,27 @@
-/* General body styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Light gray background for contrast */
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-/* Profile Header Styling */
 .profile-head {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 30px;
+    color: #000;
+    padding-right: 10px;
 }
-
-.profile-head img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #007bff;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
-}
-
-.profile-head img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
-
-.profile-head h2 {
-    font-size: 1.8rem;
-    margin-top: 10px;
-    color: #007bff;
-}
-
-.profile-head ul {
+ul {
     list-style-type: none;
-    padding: 0;
+}
+.navli{
+    padding-top:8px;
+    padding-bottom:8px;
+    padding-left: 0px;
+}
+.glyphicon{
+    padding-right: 10px;
 }
 
-.profile-head ul li {
-    font-size: 1rem;
-    margin: 5px 0;
-    color: #555;
+.account_details{
+    margin-top:30px;
 }
-
-.profile-head ul li span {
-    color: #007bff;
-    margin-right: 10px;
-}
-
-/* Account Details Section */
-.account_details {
-    background-color: #fefefe; /* Subtle off-white for contrast */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-
-.account_details h2 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: #333;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-}
-
-.account_details .divider {
-    border: 0;
+hr {
+    display: block;
     height: 1px;
-    background-color: #e0e0e0;
-    margin-bottom: 20px;
-}
-
-.account_details table {
-    width: 100%;
-    margin: 0;
-    font-size: 1rem;
-    border-collapse: collapse;
-    background-color: #ffffff; /* White table background */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.account_details td {
-    padding: 12px;
-    vertical-align: middle;
-    border: 1px solid #e0e0e0; /* Light border for cell separation */
-}
-
-.account_details td:first-child {
-    font-weight: bold;
-    color: #555;
-}
-
-.account_details td a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.account_details td a:hover {
-    text-decoration: underline;
-    color: #0056b3; /* Darker blue on hover */
-}
-
-/* Toggle Balance Styling */
-#toggle-balance {
-    font-size: 1.2rem;
-    margin-left: 10px;
-    color: #007bff;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-#toggle-balance:hover {
-    color: #0056b3;
-}
-
-#balance-amount {
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* Jumbotron Customization */
-.jumbotron {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-top: 50px;
-}
-
-/* Responsive Design Adjustments */
-@media (max-width: 768px) {
-    .profile-head {
-        text-align: center;
-    }
-
-    .profile-head h2 {
-        font-size: 1.5rem;
-    }
-
-    .account_details table {
-        font-size: 0.9rem;
-    }
-
-    .account_details td {
-        padding: 8px;
-    }
-}
-
-/* Footer Styling */
-.footer {
-    margin-top: 50px;
-    padding: 20px 0;
-    background-color: #007bff;
-    color: #ffffff;
-    text-align: center;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.footer a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }

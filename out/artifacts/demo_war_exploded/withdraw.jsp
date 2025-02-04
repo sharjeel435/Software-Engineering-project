@@ -12,65 +12,9 @@
 <link rel="stylesheet" type="text/css" href="css/deposit.css">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<!-- Enhanced Styling -->
-	<style>
-		body {
-			background: linear-gradient(135deg, #e0eafc, #cfdef3);
-			font-family: Arial, sans-serif;
-		}
-
-		.form-container {
-			background: #ffffff;
-			border-radius: 8px;
-			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-			padding: 30px;
-			margin-top: 20px;
-		}
-
-		h2 {
-			color: #333;
-			text-align: center;
-		}
-
-		.colorgraph {
-			height: 5px;
-			background: linear-gradient(to right, #0dcaf0, #6610f2, #0d6efd);
-			border: none;
-			margin-bottom: 15px;
-		}
-
-		.btn-success {
-			background: #198754;
-			border: none;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-		}
-
-		.btn-danger {
-			background: #dc3545;
-			border: none;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-		}
-
-		.btn-success:hover, .btn-danger:hover {
-			opacity: 0.9;
-		}
-
-		.alert {
-			border-radius: 5px;
-		}
-
-		@media (max-width: 768px) {
-			.form-container {
-				padding: 15px;
-			}
-
-			h2 {
-				font-size: 24px;
-			}
-		}
-	</style>
 </head>
 <body>
 	<div class="row">

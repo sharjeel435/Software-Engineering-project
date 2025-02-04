@@ -18,80 +18,20 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            background: linear-gradient(135deg, #e0eafc, #cfdef3);
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        .form-container {
-            max-width: 350px;
-            margin: 50px auto;
-            background: #fff;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #333;
-            text-align: center;
-        }
-
-        .colorgraph {
-            height: 5px;
-            background: linear-gradient(to right, #0dcaf0, #6610f2, #0d6efd);
-            border: none;
-            margin-bottom: 15px;
-        }
-
-        .btn-success {
-            background: #198754;
-            border: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-danger {
-            background: #dc3545;
-            border: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-success:hover, .btn-danger:hover {
-            opacity: 0.9;
-        }
-
-        .alert {
-            border-radius: 5px;
-        }
-
-        @media (max-width: 768px) {
-            .form-container {
-                padding: 15px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-        }
-    </style>
 </head>
 <body>
 <div class="row">
     <jsp:include page="header.jsp" />
 </div>
 <div class="container-fullwidth">
-    <%
-        AccountModel ac = null;
-        usersmodel um = null;
-        um = (usersmodel) session.getAttribute("userDetails");
-        if(um != null){
-            DatabaseOperations operations = new DatabaseOperations();
-            ac = operations.getAccount(um.getUser_id());
-    %>
+        <%
+            AccountModel ac = null;
+            usersmodel um = null;
+            um = (usersmodel) session.getAttribute("userDetails");
+            if(um != null){
+                DatabaseOperations operations = new DatabaseOperations();
+                ac = operations.getAccount(um.getUser_id());
+        %>
     <div class="row" style="margin-top: 50px;">
         <div class="col-md-4 col-md-offset-4">
             <!-- Beneficiary Form -->

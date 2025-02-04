@@ -36,7 +36,7 @@
 							Password not changed!
 						</div>
 					</div>
-					<label class="col-md-4 control-label">Username</label>
+					<label class="col-md-4 control-label">Enter Username</label>
 					<div class="col-sm-8 form-group">
 						<input type="text" required
 							   placeholder="Enter Current Username.." class="form-control" name="username">

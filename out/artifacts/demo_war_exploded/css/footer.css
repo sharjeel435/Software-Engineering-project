@@ -9,17 +9,17 @@
 	margin-top: 80px;
 }
 
-.image { 
-   position: relative; 
+.image {
+   position: relative;
    width: 100%; /* for IE 6 */
 }
 
-.image_text{ 
+.image_text{
    position: absolute;
-   color: #FFFFFF; 
-   top: 80px; 
-   left: 130px; 
-   width: 100%; 
+   color: #FFFFFF;
+   top: 80px;
+   left: 130px;
+   width: 100%;
    font-style: italic;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .footer-distributed .footer-company-name {
-	color: #8f9296;
+	color: #e9edef;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;

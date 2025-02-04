@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Green Bank</title>
-<link rel="shortcut icon" type="image/png" href="image/favicon.png" />
+<title>S2PAY Banking System</title>
+<link rel="shortcut icon" type="image/png" href="image/fav.png" />
 <link rel="stylesheet" type="text/css" href="css/main_css.css">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -33,11 +33,11 @@
 
 					<div class="carousel-inner">
 						<div class="item active">
-							<img src="image/Current-Deposit1.jpg" alt="First slide">
+							<img src="image/BANK.jpg" alt="First slide">
 
 						</div>
 						<div class="item">
-							<img src="image/Savings-Deposit1.jpg" alt="Second slide">
+							<img src="image/ONLINE.jpg" alt="Second slide">
 
 						</div>
 					</div>
@@ -59,8 +59,9 @@
 					<h2 class="text-center text-medium">
 						Loan<br>Scheme
 					</h2>
-					<p class="col-md-6 col-md-offset-3 text-center scheme-text">Green Bank's loan schemes help you achieve your dreams.From personal to home loans,
-						we've got your needs covered!</p>
+					<p class="col-md-6 col-md-offset-3 text-center scheme-text">There
+						is a variety of saving plans which can be tailored to your needs,
+						including: Tax Exempt Savings Regular Savings.</p>
 					<div class="scheme-button col-md-4 col-md-offset-4">
 						<a type="button" class="btn btn-default btn-lg" href="loan.jsp"
 							style="border-radius: 24px;">Learn more..</a>
@@ -70,8 +71,9 @@
 					<h2 class="text-center text-medium">
 						Deposit<br>Scheme
 					</h2>
-					<p class="col-md-6 col-md-offset-3 text-center scheme-text">Secure your savings with Green Bank's trusted deposit schemes.
-						Plan a brighter future with us today without any hustle.</p>
+					<p class="col-md-6 col-md-offset-3 text-center scheme-text">There
+						is a variety of saving plans which can be tailored to your needs,
+						including: Tax Exempt Savings Regular Savings.</p>
 					<div class="scheme-button col-md-4 col-md-offset-4">
 						<a type="button" class="btn btn-default btn-lg"
 							href="deposit.jsp" style="border-radius: 24px;">Learn
@@ -82,7 +84,9 @@
 					<h2 class="text-center text-medium">
 						Payment<br>Bill
 					</h2>
-					<p class="col-md-6 col-md-offset-3 text-center scheme-text">Pay your bills conveniently with Green Bank's secure and user-friendly billing methods.Simplify your financial life effortlessly.</p>
+					<p class="col-md-6 col-md-offset-3 text-center scheme-text">There
+						is a variety of saving plans which can be tailored to your needs,
+						including: Tax Exempt Savings Regular Savings.</p>
 					<div class="scheme-button col-md-4 col-md-offset-4">
 						<a type="button" class="btn btn-default btn-lg"
 							style="border-radius: 24px;" href="bill.jsp">Learn more..</a>

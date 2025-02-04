@@ -1,9 +1,12 @@
 <%@page import="java.util.List"%>
+<%--<%@page import="com.example.demo.model.BillModel"%>--%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.example.demo.model.AccountModel"%>
-<%@page import="com.example.demo.model.usersmodel"%>
-<%@page import="com.example.demo.database.DatabaseOperations"%>
-<%@page import="com.example.demo.model.billmodel"%>
+<%@ page import="com.example.demo.model.usersmodel" %>
+<%@ page import="com.example.demo.model.AccountModel" %>
+<%@ page import="com.example.demo.model.beneficiariesmodel" %>
+<%@ page import="com.example.demo.model.billmodel" %>
+<%@ page import="javax.xml.crypto.Data" %>
+<%@ page import="com.example.demo.database.DatabaseOperations" %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
@@ -11,89 +14,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Bill</title>
+    <title>Bills</title>
     <link rel="shortcut icon" type="image/png" href="image/favicon.png" />
     <link rel="stylesheet" type="text/css" href="css/deposit.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
-
-    <style>
-
-        body {
-            background: linear-gradient(135deg, #e0eafc, #cfdef3);
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Form Container */
-        .form-container {
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            margin-top: 20px;
-        }
-
-        /* Table */
-        .table-container {
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        /* Header Titles */
-        h2 {
-            color: #333;
-            text-align: center;
-        }
-
-        .colorgraph {
-            height: 5px;
-            background: linear-gradient(to right, #0dcaf0, #6610f2, #0d6efd);
-            border: none;
-            margin-bottom: 15px;
-        }
-
-        /* Buttons */
-        .btn-success {
-            background: #198754;
-            border: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-danger {
-            background: #dc3545;
-            border: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-success:hover, .btn-danger:hover {
-            opacity: 0.9;
-        }
-
-        /* Alerts */
-        .alert {
-            border-radius: 5px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .form-container, .table-container {
-                padding: 15px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-        }
-    </style>
 </head>
 <body>
 <div class="row">
@@ -102,42 +29,49 @@
 <div class="container-fullwidth">
     <%
         usersmodel um = null;
-        AccountModel ac = null;
+        AccountModel am = null;
+        ArrayList<billmodel> bm = null;
     %>
-    <%
-        um = (usersmodel) session.getAttribute("userDetails");
-        if (um != null) {
-            DatabaseOperations operations = new DatabaseOperations();
-            ac = operations.getAccount(um.getUser_id());
-            ArrayList<billmodel> bills = new ArrayList<>();
-            bills = operations.getbilldetails(ac.getAccount_id());
+    <%  um = (usersmodel)session.getAttribute("userDetails");
+        if(um != null){
+            DatabaseOperations db = new DatabaseOperations();
+            am = db.getAccount(um.getUser_id());
+            bm = db.getbilldetails(am.getAccount_id());
     %>
     <div class="row" style="margin-top: 50px;">
-        <div class="col-md-4 col-md-offset-4 form-container">
-            <!-- Add Bill Form -->
+        <div class="col-md-4 col-md-offset-4">
+            <!-- Beneficiary Form -->
             <form role="form" method="post" action="BillPaidServlet">
-                <h2>Pay your Bill</h2>
+                <h2>Bill Payment</h2>
                 <div class="col-md-12">
                     <hr class="colorgraph">
                 </div>
-                <label class="col-md-4 control-label">Bill Number</label>
+                <label class="col-md-4 control-label">Bill No</label>
                 <div class="col-sm-8 form-group">
-                    <input type="number" required placeholder="Enter Bill Number"
+                    <input type="text" required placeholder="Enter Bill no"
                            name="bill_no" class="form-control">
                 </div>
                 <label class="col-md-4 control-label">Bill Amount</label>
                 <div class="col-sm-8 form-group">
-                    <input type="number" required placeholder="Enter Bill Amount"
-                           name="bill_amount" class="form-control">
+                    <input type="number" step="any" required placeholder="Enter Bill Amount"
+                           name="bill_amount" class="form-control" min="0">
                 </div>
                 <label class="col-md-4 control-label">Bill Type</label>
                 <div class="col-sm-8 form-group">
-                    <select name="billType" class="form-control">
+                    <select name="billType" class="form-control" required>
                         <option value="electricity">Electricity</option>
                         <option value="water">Water</option>
-                        <option value="internet">Internet</option>
-                        <option value="rent">Rent</option>
-                        <option value="gas">Gas</option>
+                        <option value="creditCard">Credit Card</option>
+                        <option value="Internet">Internet</option>
+                        <option value="Gas">Gas</option>
+                        <option value="Rent">Rent</option>
+                        <option value="Telephone">Telephone</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Insurance">Insurance</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Medicine">Medicine</option>
+                        <option value="Others">Others</option>
+                        <!-- Add more options for other bill types -->
                     </select>
                 </div>
                 <label class="col-md-4 control-label">Password</label>
@@ -146,10 +80,100 @@
                            name="password" class="form-control">
                 </div>
                 <input type="hidden" name="user_id" value="<%=um.getUser_id()%>">
-                <input type="hidden" name="account_no" value="<%=ac.getAccount_id()%>">
+                <input type="hidden" name="user_name" value="<%=um.getUsername()%>">
+                <input type="hidden" name="account_no" value="<%=am.getAccount_id()%>">
+                <input type="hidden" name="first_name" value="<%=um.getFirst_name()%>>">
+                <input type="hidden" name="last_name" value="<%=um.getLast_name()%>">
+                <input type="hidden" name="address" value="<%=um.getAddress()%>">
+                <input type="hidden" name="email" value="<%=um.getEmail()%>">
                 <div class="col-md-12">
                     <hr class="colorgraph">
                 </div>
+                <%
+                    String isPassOK = (String) request.getAttribute("isPassOK");
+                    if (isPassOK != null && isPassOK.equals("No")) {
+                %>
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Sorry!</strong> Password incorrect.
+                    </div>
+                </div>
+                <%
+                    }
+                %>
+                <%
+                    String exist = (String) request.getAttribute("exist");
+                    if (exist != null && exist.equalsIgnoreCase("No")) {
+                %>
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Sorry!</strong> Bill Number incorrect.
+                    </div>
+                </div>
+                <%
+                    }
+                %>
+                <%
+                    String ispaid = (String) request.getAttribute("ispaid");
+                    if (ispaid != null && ispaid.equalsIgnoreCase("Yes")) {
+                %>
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Sorry!</strong> Bill Already Paid.
+                    </div>
+                </div>
+                <%
+                    }
+                %>
+                <%
+                    String duedate = (String) request.getAttribute("duedate");
+                    if (duedate != null && duedate.equalsIgnoreCase("Yes")) {
+                %>
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Sorry!</strong> Bill Date Passed.
+                    </div>
+                </div>
+                <%
+                    }
+                %>
+                <%
+                    String bal = (String) request.getAttribute("bill_balance");
+                    if (bal != null && bal.equalsIgnoreCase("Yes")) {
+                %>
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Sorry!</strong> Bill Amount Does Not Match.
+                    </div>
+                </div>
+                <%
+                    }
+                %>
+                <%
+                    String accbal = (String) request.getAttribute("acc_balance");
+                    if (bal != null && bal.equalsIgnoreCase("Yes")) {
+                %>
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Sorry!</strong> Your Account Balance doesnot Match.
+                    </div>
+                </div>
+                <%
+                    }
+                %>
+                <%
+                    String paybill = (String) request.getAttribute("bill_pay");
+                    if (paybill != null && paybill.equalsIgnoreCase("Yes")) {
+                %>
+                <div class="col-md-12">
+                    <div class="alert alert-success" role="alert">
+                        <strong>Thank you</strong> Bill has been paid.
+                    </div>
+                </div>
+                <%
+                    }
+                %>
+
                 <div class="row col-md-10 col-md-offset-1">
                     <div class="col-xs-6 col-md-6">
                         <input type="submit" value="Pay Bill"
@@ -164,46 +188,44 @@
         </div>
     </div>
 
-    <!-- Bills Table -->
     <div class="row" style="margin-top: 50px;">
-        <div class="col-md-8 col-md-offset-2 table-container">
-            <h2>Bill Details</h2>
+        <div class="col-md-8 col-md-offset-2">
+            <h2>Bills</h2>
             <table class="table table-bordered">
                 <thead>
-                <tr>
-                    <th>Bill No</th>
-                    <th>Type</th>
+                <tr><th>Bill No</th>
+                    <th>Bill Type</th>
                     <th>Amount</th>
                     <th>Due Date</th>
-                    <th>Status</th>
+                    <th>Paid Date</th>
+                    <th>Paid</th>
                 </tr>
                 </thead>
                 <tbody>
-                <% for (billmodel bill : bills) { %>
+                <% for (billmodel bill : bm) { %>
                 <tr>
                     <td><%=bill.getBill_no()%></td>
-                    <td><%=bill.getBill_type()%></td>
-                    <td><%=bill.getAmount_due()%></td>
-                    <td><%=bill.getDue_date()%></td>
-                    <td><%=bill.isPaid() ? "Paid" : "Unpaid"%></td>
+                    <td><%= bill.getBill_type() %></td>
+                    <td><%= bill.getAmount_due() %></td>
+                    <td><%= bill.getDue_date() %></td>
+                    <td><%=bill.getPaid_date()%></td>
+                    <td style="color: <%= bill.isPaid() == true ? "green" : "red" %>;">
+                    <%= bill.isPaid() == true ? "Paid" : "Unpaid" %></td>
+
                 </tr>
                 <% } %>
                 </tbody>
             </table>
         </div>
     </div>
-    <%
-    } else {
-    %>
+    <% } else { %>
     <div class="row" style="margin-top: 150px;">
         <div class="alert alert-warning col-md-4 col-md-offset-4"
              role="alert">
             <strong>Warning!</strong> You have to login first.
         </div>
     </div>
-    <%
-        }
-    %>
+    <% } %>
 
     <div class="row" style="margin-top: 50px;">
         <jsp:include page="footer.jsp"></jsp:include>

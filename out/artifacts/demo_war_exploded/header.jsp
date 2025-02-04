@@ -13,7 +13,7 @@
 	<div class="row hidden-xs topper">
 		<div class="col-xs-7 col-sm-7">
 			<a href="index.jsp"><img am-TopLogo alt="SECUREVIEW"
-				src="image/weblogo.png" class="img-responsive"></a>
+				src="image/headerlogo.png" class="img-responsive"></a>
 		</div>
 	</div>
 	<!-- End Topper -->
@@ -59,6 +59,7 @@
 					<li><a href="topups.jsp">Top-Ups</a></li>
 					<li><a href="transfer.jsp">Transfer</a></li>
 					<li><a href="transaction.jsp">Transaction History</a></li>
+<%--					<li><a href="close_account.jsp">Close A/C</a></li>--%>
 				</ul>
 
 				<!-- If user is logged in this menu will be shown -->

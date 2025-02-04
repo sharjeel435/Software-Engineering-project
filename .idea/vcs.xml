@@ -2,6 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/GREEN-BANKING-SYSTEM-JAVA-PROJECT" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BANKING-SYSTEM-JAVA-PROJECT" vcs="Git" />
   </component>
 </project>

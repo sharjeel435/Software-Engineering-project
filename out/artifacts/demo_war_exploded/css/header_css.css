@@ -3,15 +3,10 @@
 }
 
 [am-TopLogo] {
-	background-color: #4CAF50;
-	padding: 10px;
-	border-radius: 10px;
-	display: block;
-	margin: 0 auto;
-	height: 100px;
-	width: auto;
+	max-height:70px;
+	max-width: 210px;
+	margin: 12px 11px;
 }
-
 
 [am-CallNow] {
 	font-weight: 200;
