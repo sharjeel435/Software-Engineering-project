@@ -7,13 +7,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="css/header_css.css">
+<link rel="stylesheet" type="text/css" href="css/header_css.css"><link rel="stylesheet" type="text/css" href="css/main_css.css">
 </head>
 <div class="container-fullwidth">
 	<div class="row hidden-xs topper">
 		<div class="col-xs-7 col-sm-7">
 			<a href="index.jsp"><img am-TopLogo alt="SECUREVIEW"
-				src="image/headerlogo.png" class="img-responsive"></a>
+				src="image/head.png" class="img-responsive"></a>
 		</div>
 	</div>
 	<!-- End Topper -->

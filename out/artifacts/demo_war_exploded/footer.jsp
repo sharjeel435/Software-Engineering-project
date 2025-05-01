@@ -27,14 +27,17 @@
 	</div>
 
 	<div class="footer-center">
-		<!-- Your contact information -->
+		<h2 style="margin-left: 100px;margin-bottom: 25px;color: white">DEVELOPED BY:-</h2>
+		<h4 style="margin-left: 100px;margin-bottom: 25px;color: white"> Sharjeel Safdar 22K4210</h4>
+		<h4 style="margin-left: 100px;margin-bottom: 25px;color: white"> Suhaib Shaikh 22K4302</h4>
+		<h4 style="margin-left: 100px;margin-bottom: 25px;color: white"> Tulaib Tausif 22K4437</h4>
 	</div>
 
 	<div class="footer-right">
 		<p class="footer-company-about">
 		<div class="row">
                     <span class="hidden-xs">
-                        <h3>Our Mission Statement:</h3>
+                        <h3>Our Objective:</h3>
                         <p>
                             To deliver great personal service and the best financial products to our customers and the local communities we serve.
                         </p>
